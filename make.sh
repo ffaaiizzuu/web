@@ -10,9 +10,7 @@ echo</body>
 EOF
 
 cat <<EOF >Dockerfile
-FROM node:lts-alpine
-RUN apt-get update 
-RUN apt-get install apache2
-ADD index.html /var/www/html/
+FROM httpd:2.4
+COPY index.html /var/www/html/
 EOF
 
